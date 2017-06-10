@@ -1,0 +1,262 @@
+        @import "compass";
+        @import "partials/variables";
+        @import "partials/normalize";
+        @import "partials/mixins";
+        @import "partials/layout";
+        @import "partials/base";
+        @import "compass/css3";
+        $marginVar:2rem;
+        $defaultGazeColor:#36D1DC;
+        $borderRadius: 2px;
+        $paddingVar: 2rem;
+        .fullPage {
+            @extend %fullpage;
+            .page-wrapper {
+                @include set-width-height(100%, 100%);
+            }
+            .sideNav {
+                padding-top: $marginVar;
+                @include set-width-height($full-width/5, $full-height);
+                float: left;
+                @include set-background-color($defaultGazeColor);
+                &::after {
+                    content: '';
+                    top: 0;
+                    right: 0;
+                    z-index: 9;
+                    @include set-absolute-width-height(5%, $full-height);
+                    @include box-shadow(4px 2px 8px 0px rgba(50, 50, 50, 0.3));
+                }
+                .page-wrapper {
+                    @include set-width(80%);
+                    @extend %middle;
+                    .logoHolder {
+                        @include set-width-height(5rem, 5rem);
+                        @extend %middle;
+                    }
+                    .divider {
+                        margin: $marginVar 0 !important;
+                    }
+                }
+                .logoHolder {
+                    img {
+                        @include set-width-height(inherit, auto);
+                    }
+                }
+                .navOptions-vertical {
+                    text-align: center;
+                    .iconText {
+                        text-align: left;
+                    }
+                }
+                .opt {
+                    color: $default-color;
+                    margin: $marginVar 0;
+                    font-size: 110%;
+                    .row {
+                        transition: all 0.2s ease-in-out;
+                        &:hover {
+                            padding: 0.5rem;
+                            color: $defaultGazeColor;
+                            @include set-background-color(white);
+                            @include border-radius($borderRadius);
+                            @extend %shadow-zDepth-4;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+            //Dashboard styles
+            .dashBoardContent {
+                @include set-width-height($full-width -($full-width/5), $full-height);
+                @include set-background-color(white);
+                // @extend %deepSpace;
+                float: left;
+                padding: 6rem $paddingVar $paddingVar $paddingVar;
+                overflow-y: auto;
+                .dashNav {
+                    @extend %fixed_nav;
+                    @include set-background-color($defaultGazeColor);
+                    padding: 0 $paddingVar;
+                    @include set-width(($full-width)-($full-width/5));
+                    right: 0;
+                    top: 0;
+                }
+                .dataSummary {
+                    .dataCard {
+                        @include set-height($full-height/4.5);
+                        @extend %center;
+                        padding: 1rem;
+                        .innerCard {
+                            @include set-width-height($full-width, 100%);
+                            @include set-background-color(white);
+                            @extend %shadow-zDepth-1;
+                            @include border-radius($borderRadius);
+                            padding: 0 1rem;
+                        }
+                    }
+                    .upperSect {
+                        @include set-height(70%);
+                        margin: 0 !important;
+                        .infoIcon {
+                            height: 100%;
+                            .icon {
+                                @include set-absolute-width-height(80px, 80px);
+                                @include set-background-color($defaultGazeColor);
+                                @include border-radius($borderRadius + 2px);
+                                bottom: 1.5rem;
+                                @extend %center;
+                                @extend %shadow-zDepth-1;
+                                left: 0;
+                                font-size: 150%;
+                                color: white;
+                            }
+                        }
+                        .infoText {
+                            text-align: right;
+                            * {
+                                margin: 0 !important;
+                            }
+                        }
+                    }
+                    .lowerSect {
+                        @include set-height(30%);
+                        margin: 0 !important;
+                    }
+                }
+            }
+        }
+        
+        #searchKey {
+            border-bottom: 1px solid white;
+        }
+        
+        .profileInfo {
+            display: none;
+            @include set-absolute-width-height(auto, auto);
+            @include set-background-color($defaultGazeColor);
+            left: 0px;
+            @include border-radius($borderRadius);
+            .main {
+                margin: 0!important;
+            }
+            .opt {
+                min-width: 100px !important;
+                @extend %buttonEffect;
+                &:hover {
+                    @include transform(scale(1.02));
+                    color: white;
+                }
+                .row {
+                    margin: 0!important;
+                }
+            }
+        }
+        
+        .profile {
+            &:hover {
+                cursor: pointer;
+            }
+        }
+        
+        .dashPane {
+            .dataSummary {}
+            .patients {
+                display: none;
+                //  @include set-background-color(white);
+                min-height: 20rem;
+                text-align: center;
+                @include border-radius(5px);
+            }
+            .patientList {
+                .patientCard {
+                    $profileHeight: 4rem;
+                    @include set-width-height($full-width/4, $profileHeight);
+                    @include set-background-color(white);
+                    @include border-radius(50px);
+                    @extend %shadow-zDepth-4;
+                    .imageHolder {
+                        float: left;
+                        @include set-width-height($profileHeight, $profileHeight);
+                        @include border-radius(50px);
+                        overflow: hidden;
+                        img {
+                            @include set-width-height(inherit, inherit);
+                        }
+                    }
+                    .textArea {
+                        @extend %center;
+                        @include flex-direction(column);
+                        float: left;
+                        @include set-width-height(70%, inherit);
+                        .icons {
+                            p {
+                                display: inline-block;
+                                i {
+                                    margin: auto 0.5rem;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        .patientCard2 {
+            @include set-height(20rem);
+            margin-bottom: 5rem;
+            //@include set-background-color(gray);
+            .innerLining {
+                @include set-background-color(lightgray);
+                @include set-height(100%);
+                @extend %shadow-zDepth-1;
+                @include border-radius(5px);
+                .valign-wrapper {
+                    @include set-height(100%);
+                    @extend %center;
+                    @include flex-direction(column);
+                }
+            }
+            .imageHolder {
+                @extend %middle;
+                @include set-width-height(5rem, 5rem);
+                @include set-background-color(beige);
+                @include border-radius(50px);
+                overflow: hidden;
+                text-align: center;
+                @extend %shadow-zDepth-4;
+                img {
+                    @include set-width-height(inherit, inherit);
+                }
+            }
+            .icons {
+                p {
+                    display: inline-block;
+                    i {
+                        margin: auto 0.5rem;
+                    }
+                }
+            }
+        }
+        
+        #addPatientBtn {
+            @include bottom-right-btn();
+            @include set-background-color(limegreen);
+        }
+        
+        #patientAddMod {
+            @include set-width-height($half-width, 80vh);
+        }
+        
+        #viewPatientMod {
+            max-height: $full-height;
+            @include set-width-height(($full-width)-$full-width/6, $full-height - ($full-height/6));
+        }
+        
+        #dataGraph {
+            @include set-height(70vh);
+            #leukiGraph {
+                @include set-width-height(100%, inherit);
+                //@include set-background-color(black);
+            }
+        }

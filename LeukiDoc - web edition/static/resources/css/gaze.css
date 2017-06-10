@@ -1,0 +1,157 @@
+.gHome .valign-wrapper {
+    height: inherit !important;
+}
+
+.gHome {
+    background-image: url(../image/HP.jpeg);
+    background-repeat: none;
+    background-size: cover;
+    background-position: center;
+}
+
+.rContent {
+    height: 100% !important;
+    width: 90%;
+}
+
+.homeCard {
+    /*min-height: 75vh;*/
+}
+
+.homeCard label {
+    color: lightgray;
+}
+
+.infoSect {
+    position: relative;
+    transform: scale(1.2);
+    right: 5%;
+    background-image: url(../image/TI.jpeg);
+}
+
+.gHome,
+.infoSect {
+    background-size: cover;
+    background-position: center;
+}
+
+.card-content {
+    height: 100%;
+}
+
+.message {
+    background: #4568DC;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #4568DC, #B06AB3);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #4568DC, #B06AB3);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.infoSect .logoHolder {
+    width: 5rem;
+    height: 5rem;
+    margin: 0 auto;
+}
+
+.logoHolder img {
+    width: inherit;
+    height: inherit;
+}
+
+.loginSide {
+    background: #4568DC;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #4568DC, #B06AB3);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #4568DC, #B06AB3);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: white !important;
+}
+
+.btnHolder {
+    text-align: center;
+}
+
+.roundedBtn {
+    border-radius: 25px;
+    background-color: transparent;
+    /*border: 2px solid white;*/
+    box-shadow: none;
+    background-color: #3494E6;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #3494E6, #EC6EAD);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #3494E6, #EC6EAD);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    transition: all 0.4s ease-out;
+}
+
+.roundedBtn:hover {
+    box-shadow: none;
+    background-color: transparent;
+    background: none;
+    border: 2px solid white;
+}
+
+.majorBtn {
+    background: #000000;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #000000, #434343);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #000000, #434343);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.dashNav {
+    background: #3494E6;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #3494E6, #EC6EAD);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #3494E6, #EC6EAD);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    position: fixed;
+    z-index: 1;
+}
+
+.leftNav {
+    position: fixed;
+    height: 100vh;
+    background-color: royalblue;
+    z-index: 0;
+}
+
+.reg {
+    top: 5rem;
+}
+
+.dashHome {
+    background: none !important;
+}
+
+.rightContent {
+    margin-top: 5rem;
+}
+
+.profile {
+    background-color: white !important;
+}
+
+.dashOpt {
+    background-color: deepskyblue;
+    color: white;
+    text-align: center;
+}
+
+.loginDir {
+    text-align: center;
+}
+
+.loginDir a {
+    background: #36d1dc;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #36d1dc, #5b86e5);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #36d1dc, #5b86e5);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}

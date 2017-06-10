@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>LeuDoc | Dashboard</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width = device-width, initial-scale = 1.0">
+    <meta name="author" content="Ronald Nettey">
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+     <link rel="stylesheet" href="{{url_for('static',filename='resources/css/materialize.min.css')}}">
+
+    <link rel="stylesheet" href="{{url_for('static',filename='resources/css/sass/Gaze-sass/stylesheets/styles.css')}}">
+    <link rel="icon" href="#">
+</head>
+
+
+<body>
+
+    <div class="fullPage">
+        <div class="page-wrapper">
+            <!--Side Nav-->
+            <section class="sideNav">
+
+
+                <div class="page-wrapper">
+                    <div class="row logoHolder">
+                        <img src="https://upload.wikimedia.org/wikipedia/en/2/2d/SRU-Logo-Transparent.png">
+                    </div>
+                    <div class="divider"></div>
+
+                    <div class="row navOptions-vertical">
+                        <ul>
+                            <li class="opt">
+                                <div class="row">
+                                    <div class="col m3 icon">
+                                        <p><i class="fa fa-th-large" aria-hidden="true"></i></p>
+                                    </div>
+                                    <div class="col m9 iconText">
+                                        <p>Dashboard</p>
+                                    </div>
+                            </li>
+
+                            <li class="opt">
+                                <div class="row">
+                                    <div class="col m3 icon">
+                                        <p><i class="fa fa-user-circle" aria-hidden="true"></i></p>
+                                    </div>
+                                    <div class="col m9 iconText">
+                                        <p>User Profile</p>
+                                    </div>
+                            </li>
+
+                            <li class="opt">
+                                <div class="row">
+                                    <div class="col m3 icon">
+                                        <p><i class="fa fa-list" aria-hidden="true"></i></p>
+                                    </div>
+                                    <div class="col m9 iconText">
+                                        <p><a href ="http://127.0.0.1:8080/add-patient">Patients</a></p>
+                                    </div>
+                            </li>
+
+                             <li class="opt">
+                                <div class="row">
+                                    <div class="col m3 icon">
+                                        <p><i class="fa fa-list" aria-hidden="true"></i></p>
+                                    </div>
+                                    <div class="col m9 iconText">
+                                        <p><a href ="http://127.0.0.1:8080/calculation">Calculations</a></p>
+                                    </div>
+                            </li>
+
+                             <li class="opt">
+                                <div class="row">
+                                    <div class="col m3 icon">
+                                        <p><i class="fa fa-list" aria-hidden="true"></i></p>
+                                    </div>
+                                    <div class="col m9 iconText">
+                                        <p>Graph</p>
+                                    </div>
+                            </li>
+
+                        </ul>
+
+                        </div>
+                        </div>
+
+            </section>
+            <!--end of side nav-->
+
+            <!--Dashboard content-->
+                                <!--Add patient-->
+                                <section class ="dashBoardContent">
+                                <div class="row utils">
+                                    <nav class = "dashNav">
+                                    <div class="nav-wrapper">
+                                    <a href="#" class="brand-logo">New Patient</a>
+
+                                        <div class="nav-wrapper">
+                                        <div class="row">
+                                            <form class="col s12" method="POST" action="http://127.0.0.1:8080/add">
+                                                <div class="row">
+                                                    <div class="input-field col s12">
+                                                        <i class="material-icons prefix">account_circle</i>
+                                                        <input id="icon_https" type="text" class="validate" name="add_Firstname">
+                                                        <label for="icon_https">Firstname</label>
+                                                    </div>
+                                                    <div class="input-field col s12 ">
+                                                        <i class="material-icons prefix">account_circle</i>
+                                                        <input id="icon_https" type="text" class="validate" name="add_Lastname">
+                                                        <label for="icon_https">Lastname</label>
+                                                    </div>
+
+
+                                                    <div class="input-field col s4">
+                                                        <i class="material-icons prefix">account_circle</i>
+                                                        <input id="icon_https" type="number" class="validate" name="add_Age">
+                                                        <label for="icon_https">Age</label>
+                                                    </div>
+
+                                                    <div class="input-field col s4">
+                                                        <i class="material-icons prefix">account_circle</i>
+                                                        <input id="icon_https" type="number" class="validate" name="add_Weight">
+                                                        <label for="icon_https">Weight</label>
+                                                    </div>
+
+                                                    <div class="input-field col s4">
+                                                        <i class="material-icons prefix">account_circle</i>
+                                                        <input id="icon_https" type="number" class="validate" name="add_Height">
+                                                        <label for="icon_https">Height</label>
+                                                    </div>
+
+                                                     <div class="input-field col s2 offet-s1">
+                                                        <i class="material-icons prefix">description</i>
+                                                        <input id="icon_https" type="number" class="validate" name="add_RBC">
+                                                        <label for="icon_https">RBC</label>
+                                                    </div>
+
+                                                     <div class="input-field col s2">
+                                                        <i class="material-icons prefix">description</i>
+                                                        <input id="icon_https" type="number" class="validate" name="add_WBC">
+                                                        <label for="icon_https">WBC</label>
+                                                    </div>
+                                                     <div class="input-field col s2">
+                                                        <i class="material-icons prefix">description</i>
+                                                        <input id="icon_https" type="number" class="validate" name="add_Protein">
+                                                        <label for="icon_https">Protein</label>
+                                                    </div>
+                                                     <div class="input-field col s2">
+                                                        <i class="material-icons prefix">description</i>
+                                                        <input id="icon_https" type="number" class="validate" name="add_Platelets">
+                                                        <label for="icon_https">Platelets</label>
+                                                    </div>
+                                                     <div class="input-field col s2">
+                                                        <i class="material-icons prefix">description</i>
+                                                        <input id="icon_https" type="number" class="validate" name="add_Chemodose">
+                                                        <label for="icon_https">Chemodose</label>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <button class="waves-effect waves-light btn" name = "addBtn" type="submit"><i class="material-icons right">add</i>Add Patient</button>
+                                                </div>
+                                            </form>
+                                        </div>
+
+ 
+
+                                    </div>
+
+                                </div>
+
+
+
+            <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+            <script src="{{url_for('static', filename='js/materialize.min.js')}}"></script>
+            <script src="{{url_for('static', filename='js/gaze.js')}}"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.js"></script>
+</body>
+
+</html>

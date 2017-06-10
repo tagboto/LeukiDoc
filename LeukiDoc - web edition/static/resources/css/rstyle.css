@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100vh;
+    width: 100vw;
+}
+
+.rFullSCreen,
+.rFullWrap {
+    width: 100vw;
+    min-height: 100vh;
+    height: 100vh;
+    overflow-x: hidden;
+}

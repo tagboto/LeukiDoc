@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>LeukiDoc | Home</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Ronald Nettey">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width = device-width initial-scale = 1.0">
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+    <link type="text/css" rel="stylesheet" href="{{url_for('static',filename='css/styles.css')}}">
+    <link rel="icon" href="">
+
+</head>
+
+<body>
+
+    <section class='rcontainer center'>
+        <section class="wrapper">
+            <div class="row">
+                <div class="container">
+                    <form class="col s12" method='POST' action='http://127.0.0.1:8080/calculation'>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input placeholder="RBC" name='rbc' id="rbc" type="number" class="validate">
+                                <label for="rbc">RBC</label>
+                            </div>
+
+                            <div class="input-field col s12">
+                                <input placeholder="WBC" name='wbc' id="wbc" type="number" class="validate">
+                                <label for="wbc">WBC</label>
+                            </div>
+
+
+                            <div class="input-field col s12">
+                                <input placeholder="Protein" name='protein' id="protein" type="number" class="validate">
+                                <label for="protein">Protein</label>
+                            </div>
+
+
+                            <div class="input-field col s12">
+                                <input placeholder="Platelet" name='platelet' id="platelet" type="number" class="validate">
+                                <label for="platelet">Platelet</label>
+                            </div>
+
+                            <div class="input-field col s12">
+                                <input placeholder="Chemodose" name='cdose' id="cdose" type="number" class="validate">
+                                <label for="cdose">Chemodose</label>
+                            </div>
+
+
+                        </div>
+                        <div class='buttonHolder'>
+                            <button type='submit' class="waves-effect waves-light btn"><i class="material-icons right">cloud</i>Send</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </section>
+
+    </section>
+
+
+
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+
+    <script src="../www/js"></script>
+</body>
+
+</html>

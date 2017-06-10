@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>LeukiDoc | Register</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width = device-width, initial-scale = 1.0">
+    <meta name="author" content="Ronald Nettey">
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="{{url_for('static', filename = 'resources/css/font-awesome.min.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{url_for('static',filename='resources/css/materialize.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='resources/css/rstyle.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='resources/css/gaze.css')}}">
+    <link rel="icon" href="#">
+</head>
+
+<body>
+    <section class="rFullScreen gHome">
+        <section class="rFullWrap">
+            <section class="container rContent">
+                <div class="valign-wrapper">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col s12 m8">
+                                <div class="card homeCard loginSide">
+                                    <div class="card-content white-text">
+                                        <div class="valign-wrapper">
+                                            <div class="container">
+
+                                                <div class="row">
+                                                    <h4>Hey There!</h4>
+                                                    <p class="left">Welcome to LeukiDoc</p>
+
+                                                </div>
+                                                <div class="row">
+
+                                                    <form class="col s12" method="POST" action='http://127.0.0.1:8080/'>
+                                                        <div class="row">
+                                                            <div class="input-field col s12">
+                                                                <i class="material-icons prefix">account_circle</i>
+                                                                <input id="icon_prefix" type="text" name="reg_Username" class="validate">
+                                                                <label for="icon_prefix">Username</label>
+                                                            </div>
+                                                            <div class="input-field col s12">
+                                                                <i class="material-icons prefix">https</i>
+                                                                <input id="icon_https" type="password" name="reg_Password" class="validate">
+                                                                <label for="icon_https">Password</label>
+                                                            </div>
+                                                            <div class="input-field col s6">
+                                                                <i class="material-icons prefix">account_circle</i>
+                                                                <input id="icon_https" type="text" class="validate" name="reg_Firstname">
+                                                                <label for="icon_https">Firstname</label>
+                                                            </div>
+                                                            <div class="input-field col s6 ">
+                                                                <i class="material-icons prefix">account_circle</i>
+                                                                <input id="icon_https" type="text" class="validate" name="reg_Lastname">
+                                                                <label for="icon_https">Lastname</label>
+                                                            </div>
+                                                            <div class="input-field col s12">
+                                                                <i class="material-icons prefix">email</i>
+                                                                <input id="icon_https" type="email" class="validate" name="reg_Email">
+                                                                <label for="icon_https">Email</label>
+                                                            </div>
+
+                                                            <div class="row btnHolder">
+                                                                <div class="container">
+                                                                    <button class="waves-effect waves-light roundedBtn btn" name="registerBtn" type="submit" href ='http://127.0.0.1:8080/'>Sign Up</button>
+
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </form>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col s12 m4">
+                                <div class="card darken-1 homeCard reg infoSect">
+                                    <div class="card-content white-text">
+                                        <div class="valign-wrapper">
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="container logo">
+                                                        <div class="logoHolder">
+                                                            <img src='https://upload.wikimedia.org/wikipedia/en/2/2d/SRU-Logo-Transparent.png'>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row message">
+                                                    <div class="col s12 container">
+                                                        <h4>LeukiDoc</h4>
+                                                        <p>Chemo Progress Tracker</p>
+                                                    </div>
+                                                </div>
+                                                <!--
+                                                <div class="row" style="text-align: center">
+                                                    <p>Pick Your Major</p>
+                                                </div>-->
+
+
+                                                <p style="text-align: center;">Or</p>
+                                                <div class="row">
+                                                    <div class="col s12 loginDir">
+                                                        <a href='http://127.0.0.1:8080/log-in' class="waves-effect waves-light roundedBtn  btn">Sign In</a>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+
+            </section>
+        </section>
+
+
+
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="{{url_for('static', filename='resources/js/materialize.min.js')}}"></script>
+        <script src="{{url_for('static', filename='resources/js/gaze.js')}}"></script>
+
+        <script>
+            $(document).ready(function() {
+                $('select').material_select();
+            });
+        </script>
+</body>
+
+</html>

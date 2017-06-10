@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>LeuDoc | Dashboard</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width = device-width, initial-scale = 1.0">
+    <meta name="author" content="Ronald Nettey">
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+     <link rel="stylesheet" href="{{url_for('static',filename='resources/css/materialize.min.css')}}">
+
+    <link rel="stylesheet" href="{{url_for('static',filename='resources/css/sass/Gaze-sass/stylesheets/styles.css')}}">
+    <link rel="icon" href="#">
+
+</head>
+
+<body>
+
+    <div class="fullPage">
+        <div class="page-wrapper">
+            <!--Side Nav-->
+            <section class="sideNav">
+
+
+                <div class="page-wrapper">
+                    <div class="row logoHolder">
+                        <img src="https://upload.wikimedia.org/wikipedia/en/2/2d/SRU-Logo-Transparent.png">
+                    </div>
+                    <div class="divider"></div>
+
+                    <div class="row navOptions-vertical">
+                        <ul>
+                            <li class="opt">
+                                <div class="row">
+                                    <div class="col m3 icon">
+                                        <p><i class="fa fa-th-large" aria-hidden="true"></i></p>
+                                    </div>
+                                    <div class="col m9 iconText">
+                                        <p>Dashboard</p>
+                                    </div>
+                            </li>
+
+                            <li class="opt">
+                                <div class="row">
+                                    <div class="col m3 icon">
+                                        <p><i class="fa fa-user-circle" aria-hidden="true"></i></p>
+                                    </div>
+                                    <div class="col m9 iconText">
+                                        <p><a href="http://127.0.0.1:8080/calculation">Calculation</a></p>
+                                    </div>
+                            </li>
+
+                            <li class="opt">
+                                <div class="row">
+                                    <div class="col m3 icon">
+                                        <p><i class="fa fa-group" aria-hidden="true"></i></p>
+                                    </div>
+                                    <div class="col m9 iconText">
+                                        <p>Patients</p>
+                                    </div>
+                            </li>
+                        </ul>
+
+                        </div>
+                        </div>
+
+            </section>
+            <!--end of side nav-->
+
+            <!--Dashboard content-->
+            <section class="dashBoardContent">
+                <div class="row utils">
+                    <nav class="dashNav">
+                        <div class="nav-wrapper">
+                            <a href="#" class="brand-logo">Dashboard</a>
+                            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                                <li>
+                                    <div class="row">
+                                        <form class="col s12">
+                                            <div class="row">
+                                                <div class="input-field col s12">
+                                                    <input id="searchKey" type="text" class="validate">
+                                                    <label for="searchKey">Search</label>
+
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </li>
+                                <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fa fa-bell" aria-hidden="true"></i></a></li>
+                                <li>
+                                    <div class="chip profile">
+                                        <img src="http://doubledutch.me/wp-content/uploads/teammembers/placeholder-user-photo.png" alt="Contact Person"> {{dispName}}
+                                    </div>
+                                    <div class="profileInfo">
+                                        <div class="row main">
+                                            <ul>
+                                                <li class="opt option">
+                                                    <div class="row">
+                                                        <div class="col m3 icon">
+                                                            <p><i class="fa fa-sign-out" aria-hidden="true"></i></p>
+                                                        </div>
+                                                        <div class="col m9 iconText">
+                                                            <p>Logout</p>
+                                                        </div>
+                                                </li>
+
+                                            </ul>
+                                            </div>
+                                        </div>
+                                </li>
+                            </ul>
+                            </div>
+                    </nav>
+                    </div>
+                    <div class='dashPane'>
+                        <div class="row dataSummary">
+                            <div class="col m4 dataCard" id="patientDataCard">
+                                <div class="innerCard">
+                                    <div class="row upperSect">
+                                        <div class="col m3 infoIcon">
+                                            <div class="icon">
+                                                <p><i class="fa fa-group" aria-hidden="true"></i></p>
+                                            </div>
+                                        </div>
+                                        <div class="col m9 infoText">
+                                            <p>Patients</p>
+                                            <h4>5</h4>
+                                        </div>
+                                    </div>
+                                    <div class="row lowerSect">
+                                        <div class="divider"></div>
+                                        <div class="row">
+                                            <p>View All</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+
+                        </div>
+                        <div class='row patients' id='patientPage'>
+
+                            <a id='addPatientBtn' class="btn-floating btn-large waves-effect waves-light green" href="#patientAddMod"><i class="material-icons">add</i></a>
+                            <div class='row patientList'>
+                                <div class="row">
+                                    <h4>Patients</h4>
+                                    <div class="divider"></div>
+                                </div>
+                                <!-- <div class='patientCard'>
+                                    <div class='imageHolder'>
+                                        <img src='https://organicthemes.com/demo/profile/files/2012/12/profile_img.png'>
+
+                                    </div>
+                                    <div class='textArea center'>
+                                        <p>Patient Name</p>
+                                        <div class='icons'>
+                                            <p class='tooltipped' data-position="bottom" data-delay="20" data-tooltip="View Patient"><i class="fa fa-eye" aria-hidden="true"></i></p>
+                                            <p class='tooltipped' data-position="bottom" data-delay="20" data-tooltip="Modify Details"><i class="fa fa-edit" aria-hidden="true"></i></p>
+                                            <p class='tooltipped' data-position="bottom" data-delay="20" data-tooltip="Delete"><i class="fa fa-trash" aria-hidden="true"></i></p>
+                                        </div>
+                                    </div>
+
+                                </div>-->
+                                <div class="row">
+                                    <!--Patient card-->
+                                    <div class="patientCard2 col m4">
+                                        <div class="container innerLining">
+                                            <div class="valign-wrapper">
+                                                <div class='imageHolder'>
+                                                    <img src='https://organicthemes.com/demo/profile/files/2012/12/profile_img.png'>
+
+                                                </div>
+                                                <div class="row">
+                                                    <h4>Lastname</h4>
+                                                    <p>Firstname</p>
+                                                </div>
+                                                <div class='icons row'>
+                                                    <p id='viewPatientIcon' class='tooltipped' data-position="bottom" data-delay="20" data-tooltip="View Patient"><i class="fa fa-eye" aria-hidden="true"></i></p>
+                                                    <p id='modifyPatientIcon' class='tooltipped' data-position="bottom" data-delay="20" data-tooltip="Modify Details"><i class="fa fa-edit" aria-hidden="true"></i></p>
+                                                    <p id='deletePatientIcon' class='tooltipped' data-position="bottom" data-delay="20" data-tooltip="Delete"><i class="fa fa-trash" aria-hidden="true"></i></p>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                    <!--end of patient card-->
+
+
+                                </div>
+
+
+
+                                <!-- Modal Structures -->
+                                <!--Add patient-->
+                                <div id="patientAddMod" class="modal">
+                                    <div class="modal-content">
+                                        <h5>New Patient</h5>
+                                        <div class="divider"></div>
+                                        <div class="row">
+                                            <form class="col s12" method="post" role="form">
+                                                <div class="row">
+                                                    <div class="input-field col s12">
+                                                        <i class="material-icons prefix">account_circle</i>
+                                                        <input id="fname" type="text" class="validate" name="add_Firstname">
+                                                        <label for="fname">Firstname</label>
+                                                    </div>
+                                                    <div class="input-field col s12 ">
+                                                        <i class="material-icons prefix">account_circle</i>
+                                                        <input id="lname" type="text" class="validate" name="add_Lastname">
+                                                        <label for="lname">Lastname</label>
+                                                    </div>
+
+
+                                                    <div class="input-field col s4">
+                                                        <i class="material-icons prefix">account_circle</i>
+                                                        <input id="age" type="number" class="validate" name="add_Age">
+                                                        <label for="age">Age</label>
+                                                    </div>
+
+                                                    <div class="input-field col s4">
+                                                        <i class="material-icons prefix">account_circle</i>
+                                                        <input id="weight" type="number" class="validate" name="add_Weight">
+                                                        <label for="weight">Weight</label>
+                                                    </div>
+
+                                                    <div class="input-field col s4">
+                                                        <i class="material-icons prefix">account_circle</i>
+                                                        <input id="height" type="number" class="validate" name="add_Height">
+                                                        <label for="height">Height</label>
+                                                    </div>
+
+                                                     <div class="input-field col s2 offet-s1">
+                                                        <i class="material-icons prefix">description</i>
+                                                        <input id="rbc" type="number" class="validate" name="add_RBC">
+                                                        <label for="rbc">RBC</label>
+                                                    </div>
+
+                                                     <div class="input-field col s2">
+                                                        <i class="material-icons prefix">description</i>
+                                                        <input id="wbc" type="number" class="validate" name="add_WBC">
+                                                        <label for="wbc">WBC</label>
+                                                    </div>
+                                                     <div class="input-field col s2">
+                                                        <i class="material-icons prefix">description</i>
+                                                        <input id="protein" type="number" class="validate" name="add_Protein">
+                                                        <label for="protein">Protein</label>
+                                                    </div>
+                                                     <div class="input-field col s2">
+                                                        <i class="material-icons prefix">description</i>
+                                                        <input id="platelets" type="number" class="validate" name="add_Platelets">
+                                                        <label for="platelets">Platelets</label>
+                                                    </div>
+                                                     <div class="input-field col s2">
+                                                        <i class="material-icons prefix">description</i>
+                                                        <input id="chemodose" type="number" class="validate" name="add_Chemodose">
+                                                        <label for="chemodose">Chemodose</label>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <button class="waves-effect waves-light btn" name = "addBtn" id="addBtn" type = 'button'><i class="material-icons right">add</i>Add Patient</button>
+                                                </div>
+                                            </form>
+                                        </div>
+
+ 
+
+                                    </div>
+
+                                </div>
+                                <!--end of add patient-->
+
+                                <!--Edit patient modal-->
+                                <div id="patientEditMod" class="modal">
+                                    <div class="modal-content">
+                                        <h5>Edit Patient</h5>
+                                        <div class="divider"></div>
+                                        <div class="row">
+                                            <form id="addForm" class="col s12" method="POST">
+                                                <div class="row">
+                                                    <div class="input-field col s12">
+                                                        <i class="material-icons prefix">account_circle</i>
+                                                        <input id="icon_https" type="text" class="validate" name="edit_Firstname">
+                                                        <label for="icon_https">Firstname</label>
+                                                    </div>
+                                                    <div class="input-field col s12 ">
+                                                        <i class="material-icons prefix">account_circle</i>
+                                                        <input id="icon_https" type="text" class="validate" name="edit_Lastname">
+                                                        <label for="icon_https">Lastname</label>
+                                                    </div>
+
+
+                                                    <div class="input-field col s4">
+                                                        <i class="material-icons prefix">account_circle</i>
+                                                        <input id="icon_https" type="number" class="validate" name="edit_Age">
+                                                        <label for="icon_https">Age</label>
+                                                    </div>
+
+                                                    <div class="input-field col s4">
+                                                        <i class="material-icons prefix">account_circle</i>
+                                                        <input id="icon_https" type="number" class="validate" name="edit_Weight">
+                                                        <label for="icon_https">Weight</label>
+                                                    </div>
+
+                                                    <div class="input-field col s4">
+                                                        <i class="material-icons prefix">account_circle</i>
+                                                        <input id="icon_https" type="number" class="validate" name="edit_Height">
+                                                        <label for="icon_https">Height</label>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <button class="waves-effect waves-light btn"><i class="material-icons right">mode_edit</i>Update</a>
+                                                </div>
+                                            </form>
+                                        </div>
+
+
+
+                                    </div>
+
+                                </div>
+
+
+                                <!--end of edit patient modal-->
+
+
+                                <!--View patient modal-->
+                                <div id="viewPatientMod" class="modal">
+                                    <div class="modal-content">
+                                        <div class="row">
+                                            <div class="chip">
+                                                <img src="https://organicthemes.com/demo/profile/files/2012/12/profile_img.png" alt="Contact Person"> Jane Doe
+                                            </div>
+
+                                        </div>
+                                        <div class='row' id='dataGraph'>
+                                            <canvas id="leukiGraph"></canvas>
+
+                                        </div>
+
+
+
+                                    </div>
+
+                                </div>
+
+
+                                <!--end of view patient modal-->
+
+
+                                <!--end of modal structures-->
+
+                            </div>
+                        </div>
+
+                    </div>
+            </section>
+            <!--end of dashboard content-->
+            </div>
+            </div>
+
+
+
+            <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+            <script src="{{url_for('static', filename='resources/js/materialize.min.js')}}"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.js"></script>
+             <script src="{{url_for('static', filename='resources/js/gaze.js')}}"></script>
+             <script>
+                 $(function() {
+                    $('addBtn').click(function() {
+                        $.ajax({
+                            url: 'http://127.0.0.1:8080/add',
+                            data: $('form').serialize(),
+                            type: 'POST',
+                            success: function(response) {
+                                console.log(response);
+                            },
+                            error: function(error) {
+                                console.log(error);
+                            }
+                        });
+                    });
+                });
+             </script>
+
+</body>
+</body>
+
+</html>

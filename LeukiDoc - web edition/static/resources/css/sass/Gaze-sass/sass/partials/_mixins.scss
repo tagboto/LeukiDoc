@@ -1,0 +1,51 @@
+//removes all padding and margins
+@mixin remove-pad-and-marg() {
+    padding: 0;
+    margin: 0;
+}
+
+//sets the padding and margin
+@mixin default-pad-and-marg($pad:0px, $marg:0px) {
+    padding: $pad;
+    margin: $marg;
+}
+
+//Sets the background-color
+@mixin set-background-color($color) {
+    background-color: $color !important;
+}
+
+//Sets the width
+@mixin set-width($width) {
+    width: $width;
+}
+
+//Sets the height
+@mixin set-height($height) {
+    height: $height;
+}
+
+//sets the absolute width and height
+@mixin set-absolute-width-height($width, $height) {
+    position: absolute;
+    width: $width;
+    height: $height;
+}
+
+//GhostBtn
+@mixin set-ghost-btn($color:black) {
+    color: $color;
+    background: none !important;
+    border: 2px solid $color;
+}
+
+@mixin set-width-height($width:100%, $height:100%) {
+    width: $width;
+    height: $height;
+}
+
+@mixin bottom-right-btn($point:2rem) {
+    position: fixed;
+    right: $point;
+    bottom: $point;
+}

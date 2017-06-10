@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>LeukiDoc | Add Patient</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width = device-width, initial-scale = 1.0">
+    <meta name="author" content="Ronald Nettey">
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/materialize.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/rstyle.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/gaze.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/sass/Gaze-sass/stylesheets/styles.css')}}">
+    <link rel="icon" href="#">
+</head>
+
+<body>
+
+    <div class="fullPage">
+        <div class="page-wrapper">
+            <!--Side Nav-->
+            <section class="sideNav">
+
+
+                <div class="page-wrapper">
+                    <div class="row logoHolder">
+                        <img src="https://upload.wikimedia.org/wikipedia/en/2/2d/SRU-Logo-Transparent.png">
+                    </div>
+                    <div class="divider"></div>
+
+                    <div class="row navOptions-vertical">
+                        <ul>
+                            <li class="opt">
+                                <div class="row">
+                                    <div class="col m3 icon">
+                                        <p><i class="fa fa-th-large" aria-hidden="true"></i></p>
+                                    </div>
+                                    <div class="col m9 iconText">
+                                        <p>Add Patient</p>
+                                    </div>
+                            </li>
+
+                            <li class="opt">
+                                <div class="row">
+                                    <div class="col m3 icon">
+                                        <p><i class="fa fa-user-circle" aria-hidden="true"></i></p>
+                                    </div>
+                                    <div class="col m9 iconText">
+                                        <p>User Profile</p>
+                                    </div>
+                            </li>
+
+                            <li class="opt">
+                                <div class="row">
+                                    <div class="col m3 icon">
+                                        <p><i class="fa fa-list" aria-hidden="true"></i></p>
+                                    </div>
+                                    <div class="col m9 iconText">
+                                        <p><a href ="http://127.0.0.1:5000/patient">Patients</a></p>
+                                    </div>
+                            </li>
+
+                             <li class="opt">
+                                <div class="row">
+                                    <div class="col m3 icon">
+                                        <p><i class="fa fa-list" aria-hidden="true"></i></p>
+                                    </div>
+                                    <div class="col m9 iconText">
+                                        <p><a href ="http://127.0.0.1:5000/calculation">Calculations</a></p>
+                                    </div>
+                            </li>
+
+                             <li class="opt">
+                                <div class="row">
+                                    <div class="col m3 icon">
+                                        <p><i class="fa fa-list" aria-hidden="true"></i></p>
+                                    </div>
+                                    <div class="col m9 iconText">
+                                        <p>Graph</p>
+                                    </div>
+                            </li>
+
+                        </ul>
+
+                        </div>
+                        </div>
+
+            </section>
+            <!--end of side nav-->
+
+            <!--Dashboard content-->
+            <section class="dashBoardContent">
+                <div class="row utils">
+                    <nav class="dashNav">
+                        <div class="nav-wrapper">
+                            <a href="#" class="brand-logo">Dashboard</a>
+                            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                                <li>
+                                    <div class="row">
+                                        <form class="col s12">
+                                            <div class="row">
+                                                <div class="input-field col s12">
+                                                    <input id="searchKey" type="text" class="validate">
+                                                    <label for="searchKey">Search</label>
+
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </li>
+                                <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fa fa-bell" aria-hidden="true"></i></a></li>
+                                <li>
+                                    <div class="chip profile">
+                                        <img src="http://doubledutch.me/wp-content/uploads/teammembers/placeholder-user-photo.png" alt="Contact Person"> {{userName}}
+                                    </div>
+                                    <div class="profileInfo">
+                                        <div class="row main">
+                                            <ul>
+                                                <li class="opt option">
+                                                    <div class="row">
+                                                        <div class="col m3 icon">
+                                                            <p><i class="fa fa-sign-out" aria-hidden="true"></i></p>
+                                                        </div>
+                                                        <div class="col m9 iconText">
+                                                            <p>Logout</p>
+                                                        </div>
+                                                </li>
+
+                                            </ul>
+                                            </div>
+                                        </div>
+                                </li>
+                            </ul>
+                            </div>
+                    </nav>
+                    </div>
+                    <div class="row dataSummary">
+                        <div class="col m4 dataCard">
+                            <div class="innerCard">
+                                <div class="row upperSect">
+                                    <div class="col m3 infoIcon">
+                                        <div class="icon">
+                                            <p><i class="fa fa-list" aria-hidden="true"></i></p>
+                                        </div>
+                                    </div>
+                                    <div class="col m9 infoText">
+                                        <p>Patient Information</p>
+                                    </div>
+                                </div>
+                                <div class="row lowerSect">
+                                    <div class="divider"></div>
+                                    <div class="row">
+                                     <div class="container">
+                    
+                            </div>
+
+                    <form class="col s12" method='POST' action='http://127.0.0.1:5000/calculation'>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input placeholder="Name" name='pName' id="pName" type="text" class="validate">
+                                <label for="pName">Patient Name</label>
+                            </div>
+
+                            <div class="input-field col s12">
+                                <input placeholder="Age" name='pAge' id="pAge" type="number" class="validate">
+                                <label for="pAge">Patient Age</label>
+                            </div>
+
+
+                            <div class="input-field col s12">
+                                <input placeholder="Height" name='pHeight' id="pHeight" type="number" class="validate">
+                                <label for="pHeight">Patient Height</label>
+                            </div>
+
+
+                            <div class="input-field col s12">
+                                <input placeholder="Weight" name='pWeight' id='pWeight' type="number" class="validate">
+                                <label for="pWeight">Patient Weight</label>
+
+                                        <p>Details</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+
+                    </div>
+            </section>
+            <!--end of dashboard content-->
+            </div>
+            </div>
+
+
+
+            <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+            <script src="{{url_for('static', filename='js/materialize.min.js')}}"></script>
+            <script src="{{url_for('static', filename='js/gaze.js')}}"></script>
+</body>
+
+</html>

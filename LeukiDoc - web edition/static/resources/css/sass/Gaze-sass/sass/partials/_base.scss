@@ -1,0 +1,93 @@
+* {
+    @include default-pad-and-marg();
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    position: relative;
+}
+
+body {
+    @include set-background-color($default-color);
+}
+
+%bloodRed-grad {
+    background: #f85032;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #e73827, #f85032);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #e73827, #f85032);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+%celestial {
+    background: #C33764;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #1D2671, #C33764);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #1D2671, #C33764);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+%deepSpace {
+    background: #000000;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #000000, #434343);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #000000, #434343);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+%buttonEffect {
+    cursor: pointer;
+    transition: transform 0.4s ease-in-out;
+    &:hover {
+        @include transform(scale(1.2));
+        color: $tomato;
+    }
+}
+
+%fullpage {
+    overflow: hidden;
+    width: $full-width;
+    height: $full-height;
+    @include set-background-color($default-color);
+}
+
+%center {
+    @include display-flex();
+    @include justify-content(center);
+    @include align-items(center);
+}
+
+%vcenter {
+    @extend %center;
+    @include justify-content(space-between);
+}
+
+%middle {
+    margin: 0 auto;
+}
+
+%abs_nav {
+    @include set-absolute-width-height($full-width, $navHeight);
+    @include set-background-color(black);
+    z-index: 1;
+}
+
+%fixed_nav {
+    @extend %abs_nav;
+    position: fixed;
+}
+
+%normal_nav {
+    @extend %abs_nav;
+    position: static;
+}
+
+%shadow-zDepth-4 {
+    @include box-shadow( 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.3));
+}
+
+%shadow-zDepth-1 {
+    @include box-shadow(0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2));
+}
