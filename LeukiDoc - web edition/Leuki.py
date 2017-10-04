@@ -18,11 +18,11 @@ def main():
         authentication = True
         
         #This is to request data from the forms 
-        dispName = userName = request.form['reg_Username']
-        password = request.form['reg_Password']
-        firstName = request.form['reg_Firstname']
-        lastName = request.form['reg_Lastname']
-        email = request.form['reg_Email']
+        dispName = userName = request.form['reg_Username'] #gets the users username 
+        password = request.form['reg_Password'] #gets the users password
+        firstName = request.form['reg_Firstname'] #gets the users first name
+        lastName = request.form['reg_Lastname'] #gets the users last name
+        email = request.form['reg_Email'] #gets the users email. Validation was done in the javascript file
         
 
         #Appended the data from a form into a list 
@@ -63,8 +63,8 @@ def logIn():
     if request.method == "POST":
         
         #Takes the details entered by the user 
-        dispName = logName = request.form['login_username']
-        logPassword = request.form['login_password']
+        dispName = logName = request.form['login_username'] #this is the users login 
+        logPassword = request.form['login_password'] #this is the users password
 
         
 
@@ -100,11 +100,11 @@ def calculation(chartID='chart_ID', chart_type='line', chart_height=350):
 
     #If post method called stores the data 
     if request.method == 'POST':
-        _rbc = int(request.form['rbc'])
-        _wbc = int(request.form['wbc'])
-        _protein = int(request.form['protein'])
-        _platelet = int(request.form['platelet'])
-        _chemoDose = int(request.form['cdose'])
+        _rbc = int(request.form['rbc']) #collects the number of red blood cells 
+        _wbc = int(request.form['wbc']) #collects the number of white blood cells
+        _protein = int(request.form['protein']) #collects the number of protein cells
+        _platelet = int(request.form['platelet']) #collects the number of platelets 
+        _chemoDose = int(request.form['cdose']) #collects the dosage of chemo drug patient should be given 
         time = 20
         x=[0]
         y=[]
@@ -118,11 +118,11 @@ def calculation(chartID='chart_ID', chart_type='line', chart_height=350):
 
 
         #Name and parts of the graph
-        chart = {"renderTo": chartID, "type": chart_type, "height": chart_height, }
-        series = [{"name": 'Cancer Cells', "data": list(y)}]
-        title = {"text": 'Effect of Chemotherapy'}
-        xAxis = {"title":"Time","categories": list(x)}
-        yAxis = {"title": {"text": 'Number of Cancer Cells'}}
+        chart = {"renderTo": chartID, "type": chart_type, "height": chart_height, } #This is the type of chart we are using
+        series = [{"name": 'Cancer Cells', "data": list(y)}] #This is the line plotted on the graph given the info above
+        title = {"text": 'Effect of Chemotherapy'}  #The title of the graph 
+        xAxis = {"title":"Time","categories": list(x)} #what should be on the x axis
+        yAxis = {"title": {"text": 'Number of Cancer Cells'}} #what should be on the y axis 
         
 
         #Sends information to the graph     
